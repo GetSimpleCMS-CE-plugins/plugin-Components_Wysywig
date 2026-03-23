@@ -8,7 +8,7 @@ $thisfile=basename(__FILE__, ".php");
 register_plugin(
 	$thisfile, //Plugin id
 	'Components Wysywig', 	//Plugin name
-	'1.2', 		//Plugin version
+	'1.3', 		//Plugin version
 	'Mateusz Skrzypczak',  //Plugin author
 	'https://www.multicolor.stargard.pl/', //author website
 	'Adds ckEditor to Components textarea ', //Plugin description
@@ -20,7 +20,7 @@ register_plugin(
 add_action('footer','compo_wysywig'); 
  
 
-register_script('componentsCke', $SITEURL.'admin/template/js/ckeditor/ckeditor.js', '1.1', TRUE);
+register_script('componentsCke', $SITEURL.GSADMIN.'/template/js/ckeditor/ckeditor.js', '1.1', TRUE);
 queue_script('componentsCke',GSBACK); 
 
 register_script('componentsWysywig', $SITEURL.'plugins/components-wysywig/js/components-wysywig.js', '1.2', TRUE);
