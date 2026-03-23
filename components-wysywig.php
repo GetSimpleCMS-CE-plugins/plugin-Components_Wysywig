@@ -19,8 +19,11 @@ register_plugin(
 # activate filter 
 add_action('footer','compo_wysywig'); 
  
-
-register_script('componentsCke', $SITEURL.GSADMIN.'/template/js/ckeditor/ckeditor.js', '1.1', TRUE);
+if (defined('GSADMIN')) {
+    register_script('componentsCke', $SITEURL.GSADMIN.'/template/js/ckeditor/ckeditor.js', '1.1', TRUE);
+} else {
+    register_script('componentsCke', $SITEURL.'admin/template/js/ckeditor/ckeditor.js', '1.1', TRUE);
+}
 queue_script('componentsCke',GSBACK); 
 
 register_script('componentsWysywig', $SITEURL.'plugins/components-wysywig/js/components-wysywig.js', '1.2', TRUE);
